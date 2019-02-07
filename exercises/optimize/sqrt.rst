@@ -57,7 +57,8 @@ In this review, include:
      there being no DISPLAY environment variable being set, then that means that
      you need install X or enable X forwarding when you ssh into your VM.
      `X for Mac OS X<www.xquartz.org>` and `X for Windows<x.cygwin.com>`
-     ssh -Y ${HOSTNAME}
+     ssh -Y ${HOSTNAME} (also, multiple screens can cause difficulties, 
+     so try unplugging them if you can't see a window).
      Only use the '-Y' argument when you ssh to something secure like your VM.
      Otherwise add something like 'ForwardX11Timeout 1D' to ~/.ssh/config and use
      the  '-X' argument.
