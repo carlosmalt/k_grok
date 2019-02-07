@@ -24,7 +24,7 @@ You can play a recording back with shortened inactive times.
 Example: asciinema play -w 1 /tmp/hw2-review
 
 Upload asciinema files to Google Docs and include a link in an email to the
-instructors and TA. Not doing this will cost 2 points. Use subjects such as:
+instructor. Not doing this will cost 2 points. Use subjects such as:
 
  * [HW 2] Review asciinema
  * [HW 2] Patch asciinema
@@ -32,7 +32,7 @@ instructors and TA. Not doing this will cost 2 points. Use subjects such as:
 Review a patch (10 points)
 --------------------------
 
-Send an email to the instructor and TA reviewing the following:
+Send an email to the instructor reviewing the following:
 
 [PATCH] Optimize int_sqrt for small values for faster idle
 https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1063272.html
@@ -107,7 +107,7 @@ Submit a patch series
 
 Reroll (i.e. act as if you are the original author, revising it) the patch you
 just reviewed, addressing the feedback of the kernel developers and your
-review. Send the rerolled patch to the instructor and TA.  It should include
+review. Send the rerolled patch to the instructor.  It should include
 the appropriate version in the subject's tag.
 
 Add a new optimized version of the int_sqrt function for a new random range of
