@@ -10,16 +10,16 @@ This multi-part assignment will have separately graded sections.
 Record all of your command-line work separately for each part of the homework:
 hw2-review, hw2-patch.
 
-Example: asciinema rec /tmp/hw2-review
+Example: `asciinema rec /tmp/hw2-review`
 
 After starting the recording, launch screen and create multiple terminal buffers
-(i.e. console sessions) in screen via '<CTRL>+a c'. Switch between them via
-commands such as '<CTRL>+a "' (that the control and letter a keys pressed
+(i.e. console sessions) in screen via `<CTRL>+a c`. Switch between them via
+commands such as `<CTRL>+a "` (that the control and letter a keys pressed
 simultaneously, followed by a press of the double quote key).
 
 You can play a recording back with shortened inactive times.
 
-Example: asciinema play -w 1 /tmp/hw2-review
+Example: `asciinema play -w 1 /tmp/hw2-review`
 
 Upload asciinema files to Google Docs and include a link in an email to the
 instructor. Not doing this will cost 2 points. Use subjects such as:
@@ -36,29 +36,29 @@ https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1063272.html
 
 The subject of this email should be:
 
-Re: [PATCH] Optimize int_sqrt for small values for faster idle
+`Re: [PATCH] Optimize int_sqrt for small values for faster idle`
 
 In this review, include:
 
  * suggestions for improving the patch
 
  * name 3 people who modified this file
-   apt install git-gui, and see git-gui blame
+   `apt install git-gui`, and see `git-gui blame`
 
    * WARNING: You can't use a shallow clone, so either start with a full clone or
      convert a shallow clone to full with:
-     git fetch --unshallow upstream
-     git checkout upstream/master
+     `git fetch --unshallow upstream` 
+     `git checkout upstream/master` 
 
    * NOTE: If you execute 'git gui blame' and see an error message that refers to
      there being no DISPLAY environment variable being set, then that means that
      you need install X or enable X forwarding when you ssh into your VM.
-     `X for Mac OS X<www.xquartz.org>` and `X for Windows<x.cygwin.com>`
-     ssh -Y ${HOSTNAME} (also, multiple screens can cause difficulties, 
+     [X for Mac OS X](www.xquartz.org) or [X for Windows](x.cygwin.com)
+     `ssh -Y ${HOSTNAME}` (also, multiple screens can cause difficulties, 
      so try unplugging them if you can't see a window).
-     Only use the '-Y' argument when you ssh to something secure like your VM.
-     Otherwise add something like 'ForwardX11Timeout 1D' to ~/.ssh/config and use
-     the  '-X' argument.
+     Only use the `-Y` argument when you ssh to something secure like your VM.
+     Otherwise add something like `ForwardX11Timeout 1D` to `~/.ssh/config` and use
+     the  `-X` argument.
 
  * a list of everywhere the function is called
 
@@ -74,11 +74,11 @@ In this review, include:
  * benchmarks of previous code vs. new code
    benchmark in a kernel module, not userspace
    use perf trace events, and graph CDF and PDF,
-   see k_grok/exercises/tracepoint-silly/
+   see `k_grok/exercises/tracepoint-silly/`
 
-   Since int_sqrt takes much less time than printk, jiffies aren't high enough
-   resolution.  Include the linux/time.h header and use ktime_get(), and macros
-   like ktime_sub(lhs, rhs) and ktime_to_ns(...) instead of standard math ops::
+   Since `int_sqrt` takes much less time than `printk`, jiffies aren't high enough
+   resolution.  Include the `linux/time.h` header and use `ktime_get()`, and macros
+   like `ktime_sub(lhs, rhs)` and `ktime_to_ns(...)` instead of standard math ops:
 
 ```C
     ...
@@ -108,13 +108,13 @@ just reviewed, addressing the feedback of the kernel developers and your
 review. Send the rerolled patch to the instructor.  It should include
 the appropriate version in the subject's tag.
 
-Add a new optimized version of the int_sqrt function for a new random range of
+Add a new optimized version of the `int_sqrt` function for a new random range of
 numbers. Regarding the random range and conclusions about bit length, you can
 deduce that a number from, say, 65536 to 4294967295 is at least 8 bits
 and less than 32 bits.
 
-Add a prototype declaration after the one for int_sqrt in include/linux/kernel.h
-Add the implementation after int_sqrt in lib/int_sqrt.c::
+Add a prototype declaration after the one for `int_sqrt` in `include/linux/kernel.h`
+Add the implementation after `int_sqrt` in `lib/int_sqrt.c`:
 
 ```C
         unsigned long int_sqrt_optimized(unsigned long x){
@@ -159,10 +159,10 @@ For example::
 ```
 
 Cite the source of anything you don't write youreself int the patch history
-(i.e. below the '---' mark)..
+(i.e. below the `---` mark)..
 
 Benchmark as above. The benchmark kernel module source should be included as
-separate emails in the series. Add the silly dir under ${KERNEL_SOURCE}/tools,
+separate emails in the series. Add the silly dir under `${KERNEL_SOURCE}/tools`,
 and then you can generate a patch.
 
 Remember all of the other things the documentation says a patch should have.
